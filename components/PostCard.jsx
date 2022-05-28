@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
 
-const PostCard = ( {post}) => {
+const PostCard = ({ post }) => {
     return (
         <div>
             {post.title}
