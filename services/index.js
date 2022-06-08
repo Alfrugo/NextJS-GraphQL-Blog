@@ -50,3 +50,23 @@ export const getCategories = async () => {
   const result = await request(graphqlAPI, query)
   return result.categories;
 }
+
+export const getRecentPosts = async () => {
+  const query = gql`
+    query GetPostDetails () {
+      posts(
+        orderBy: created_ASC
+        last: 3
+      ){
+        title
+        featuredImage {
+          url
+        }
+        createdAt
+        slug
+      }
+    }
+  `
+  const result = await request(graphqlAPI, query)
+  return result.posts;
+}
