@@ -93,3 +93,40 @@ export const getSimilarPosts = async () => {
   return result.posts;
 }
 
+
+export const getPostDetails = async (slug) => {
+  const query = gql `
+  query GetPostDetails($slug: String!) {
+      posts(where: { slug: $slug }){
+      
+            author {
+              bio
+              name
+              id
+              photo {
+                url
+              }
+            }
+            createdAt
+            slug
+            title
+            excerpt
+            featuredimage {
+              url
+            }
+            categories {
+              slug
+              name
+            }
+            content {
+              raw
+            }
+          }
+        }
+  `
+    const result = await request(graphqlAPI, query, { slug })
+
+    return result.post
+
+}
+
