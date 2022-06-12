@@ -1,9 +1,21 @@
 import React from 'react'
+import Image from 'next/image'
 
-const Author = () => {
+const Author = ( { author }) => {
     return (
         <div>
-            <h1>Author</h1>
+            <div>
+                <Image
+                    alt={author.name}
+                    unoptimized
+                    height='100px'
+                    width='100px'
+                    className='align-middle rounded-full'
+                    src={author.photo.url}
+                
+                />
+
+            </div>
         </div>
     )
 }
