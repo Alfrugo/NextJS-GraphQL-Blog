@@ -10,7 +10,7 @@ const PostDetails = ({ post }) => {
     const router = useRouter();
 
 
-    console.log(post)
+    // console.log(post)
     return (
         <>
         <div className='container mx-auto px-10 mb-8'> 
@@ -49,6 +49,6 @@ export async function getStaticPaths() {
 
     return {
         paths: posts.map(({ node: { slug }}) => ({ params: { slug }})), 
-        fallback: false,
+        fallback: true,
     }
 }
