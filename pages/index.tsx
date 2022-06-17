@@ -4,10 +4,8 @@ import Head from 'next/head'
 // import Image from 'next/image'
 import { PostCard, PostWidget, Categories} from '../components'
 
+
 import { getPosts } from '../services'
-
-
-
 
 
 export default function Home({ posts }) {
