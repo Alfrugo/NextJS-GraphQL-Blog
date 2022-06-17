@@ -7,7 +7,6 @@ const CommentsForm = ({ slug }) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [formData, setFormData] = useState({ name: null, email: null, comment: null, storeData: false });
 
-
   useEffect(() => {
     setLocalStorage(window.localStorage);
     const initalFormData = {
